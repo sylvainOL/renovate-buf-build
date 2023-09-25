@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(fix)",
+    ":gitSignOff"
+  ],
+  "commitBodyTable": true,
+  "postUpdateOptions": ["gomodTidy"],
+	"packageRules": [
+    {
+      "packageNames": [
+        "golang",
+        "go"
+      ],
+      "groupName": "go"
+    }
+  ]
+}
